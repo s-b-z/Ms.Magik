@@ -1,0 +1,229 @@
+body {
+  text-align: center;
+  font-family: Arial;
+  background:radial-gradient(circle, rgb(179, 10, 213) 0%, rgb(254, 97, 207) 100%);
+}
+
+h1 {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 120px;
+  margin: 0;
+  padding: 0;
+
+}
+
+h2{
+    font-style: italic;
+    color: rgb(23, 3, 69);
+    top: 5px;
+}
+
+
+/* MOUTH */
+.stage {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.mouth {
+  position: relative;
+  width: 800px;
+  height: 500px;
+}
+
+.mouth-inside {
+  position: absolute;
+  width: 420px;
+  height: 570px;
+  top: 17%;
+  left: 24%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(131, 10, 10) 20%, black 100%);
+  z-index: 1;
+  
+}
+
+.throat-1{
+    position: absolute;
+    width: 370px;
+    height: 325px;
+    border-radius: 50%;
+    background: radial-gradient(circle, hotpink 65%, black 100%);
+    z-index: 2;
+    top: 45%;
+    left: 27%;
+}
+
+.throat-2{ 
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(131, 10, 10) 40%, black 100%);
+    z-index: 3;
+    top: 60%;
+    left: 30%;
+}
+
+.top {
+  position: absolute;
+  top: -5%;
+  left: 14%;
+  width: 570px;
+  height: 350px;
+  z-index: 7;
+}
+
+.ball {
+  position: absolute;
+  top: 344px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 295px;
+  height: 255px;
+  background:radial-gradient(circle, rgb(253, 3, 99) 65%, black 100%);
+  border-radius: 50%;
+  z-index: 5;
+  outline: 3px solid black;
+}
+
+
+.number {
+  position: absolute;
+  top: 35%;
+  left: 33%;
+  border-radius: 50%;
+  background: white;
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+  color: black;
+  font-weight: bold;
+  z-index: 6;
+  outline: 3px solid black;
+
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.bottom {
+  position: absolute;
+  top: 425px;
+  left: 16%;
+  width: 550px;
+  height: 300px;
+  z-index: 4;
+}
+
+#questionInput{
+    padding: 0;
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+}
+
+
+
+button {
+  font-size: 40px;      
+  border: none;
+  cursor: pointer;
+background: rgb(115, 0, 255);
+  color: black;
+  font-weight: bold;
+  width: 200px;
+  height: 55px;
+ border-radius: 80%;
+ z-index: 100;
+}
+
+
+.shake-button {
+    position: absolute;
+    left: 8%;
+    top: 105%;
+    
+}
+.reset-button {
+    position: absolute;
+    top: 106%;
+    left: 75%;
+    
+}
+
+#magic{ 
+    position: relative;
+    width: 100%;
+}
+
+
+.pink-smoke{
+    position: absolute;
+    top: 110%;
+    left: 30%;
+    transform: translate(-33%, -80%) ; 
+    height: 1300px; 
+    width: 1500px; 
+    z-index: -5; 
+}
+
+.triangle {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  background: radial-gradient(circle, rgb(9, 5, 122) 85%, black 100%);
+  transform: translate(-50%, -200px); /* START ABOVE */
+
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 140px solid black;
+
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index: 6;
+}
+
+
+#answer {
+  position: absolute;
+  top: -120px;
+  left: -60px;
+  width: 120px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.number {
+  transition: all 0.6s ease;
+}
+
+.ball.revealed .number {
+  transform: translateY(200px);
+  opacity: 0;
+}
+
+.ball.revealed .triangle {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.ball:not(.revealed) .triangle{ 
+    transform: translate(-50%, 200px);
+    opacity: 0;
+}
+
+.ball:not(.revealed) .number {
+  transform: translateY(-200px); /* starts above */
+  opacity: 0;
+}
+
+.ball.initial .number {
+  transform: translateY(0);
+  opacity: 1;
+}
